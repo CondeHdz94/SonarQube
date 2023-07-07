@@ -12,7 +12,7 @@ Es una herramienta de análisis de código estático autoadministrada que ayuda 
 
 Se crea un archivo de nombre “docker-compose.yml” con el siguiente contenido:
 
-![image](uploads/5a30a1184280d8bcf14130fc26c5e94b/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/41eb3853-c58b-402b-8fd4-f86d894a4112)
 
 * La creación de los siguientes volúmenes ayuda a evitar la pérdida de información al actualizar a una nueva versión o actualizar a una edición superior:
 
