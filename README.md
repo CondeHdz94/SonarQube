@@ -204,15 +204,15 @@ Con el modo conectado, se aplica el mismo conjunto de reglas personalizadas tant
 
 3. Como paso siguiente, se debe enlazar el proyecto que se va a analizar. Para ello, dirigirse a la vista MODO CONECTADO DE SONARLINT en VSCode Explorer y seleccionar “Agregar enlace de proyecto” para agregar la conexión deseada.
 
-![image](uploads/3a304d5323dc46c1e555a9d7c3fa3a31/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/59e24047-01b1-4f00-94b4-61de9369a8e0)
 
 Se selecciona el proyecto.
 
-![image](uploads/0328b0497e2521c6f7ed2d3008edf699/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/15ca30e6-68af-4bf1-9472-cf50cb6ebc21)
 
 Al final, se debe ver reflejado como en la imagen siguiente:
 
-![image](uploads/1e87123ac63bc69bb2084ee36f730eb8/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/726dbd7b-273d-4d6c-b571-25747c89d311)
 
 Con lo anterior, ya se puede hacer uso del modo conectado de Sonar Lint.
 
