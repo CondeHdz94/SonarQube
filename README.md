@@ -22,7 +22,7 @@ Se crea un archivo de nombre “docker-compose.yml” con el siguiente contenido
    
 _En el servicio de sonarqube hay que asegúrese de usar  los volúmenes  como se muestra en la definición anterior y no vincular una ruta. con esto ayuda a docker para que los complementos se completen correctamente._
 
-![image](uploads/324aff15aa231d93fdb4614a866c7a92/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/a12c01ad-e109-4727-a648-9d17b44dc8bc)
 
 * SonarQube requiere una base de datos para almacenar información sobre proyectos, métricas de calidad del código, problemas de código, configuraciones de reglas, usuarios, etc. El propósito principal de almacenar estos datos es proporcionar un repositorio centralizado para el análisis de código, la generación de informes y la visualización de métricas de calidad del código. Además, la base de datos permite mantener un seguimiento histórico de los proyectos y la evolución de la calidad del código a lo largo del tiempo.
 
@@ -30,11 +30,11 @@ Para ejecutar el servidor se debe realizar con el siguiente comando:
 
 `docker compose up -d`
 
-![image](uploads/f148dace11635137110c44107f4b802e/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/fae1d4d0-59a0-43d2-8ac4-9b1734375d2a)
 
 Una vez esté arriba, se puede acceder desde el navegador: http://localhost:9000/ 
 
-![image](uploads/7ee407b2f461442569434828e59e3fe4/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/a95d67a8-6a13-46fe-b586-29d6717e72dc)
 
 Como manera inicial se puede acceder con las siguientes credenciales:
 
@@ -43,9 +43,9 @@ Como manera inicial se puede acceder con las siguientes credenciales:
 
 Después de ingresar se solicita la actualización de las credenciales:
 
-![image](uploads/53cb4c423982567a6b3d9ca2ce5d161c/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/db9af639-2273-4829-ad9a-144ee98b3092)
 
-![image](uploads/f0449ecdf00b5b746632840ead0ce696/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/fc7ea8fe-a87f-4187-9c79-7c2c38727c54)
 
 
 Posterior a esto, se procede a generar un token de autenticación de SonarQube siguiendo los siguientes pasos:
@@ -55,7 +55,7 @@ Posterior a esto, se procede a generar un token de autenticación de SonarQube s
 * Se ingresa un nombre para el token en el campo "Generate Tokens" (Generar tokens), de tipo User Token y luego se hace clic en "Generate" (Generar).
 * Por último, se copia el token generado; ya que se necesitará en pasos siguientes.
 
-![image](uploads/07e525a88705b97c522dedf2016c7dde/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/7de691fe-5459-441e-822f-af5cdf404064)
 
 
 **Excepciones**
@@ -64,7 +64,7 @@ Si al ejecutar “docker compose up” se genera un error como el siguiente:
 
 `bootstrap check failure [1] of [1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]`
 
-![image](uploads/3f06dcae9766fc6c6f2a17c5be363bf0/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/c6920bfb-2a1b-4ebe-92c8-94299fd0e8d1)
 
 Es porque  el valor de **vm.max_map_count** en tu sistema es demasiado bajo para que Elasticsearch se ejecute correctamente. Elasticsearch requiere que este valor sea configurado adecuadamente en el sistema operativo para funcionar correctamente.
 
@@ -118,27 +118,27 @@ Se debe crear un archivo de nombre **“sonar-project.properties”** en la raí
 
 Este archivo se utiliza para definir y personalizar la configuración del proyecto que posteriormente se analizará en SonarQube. Para ello se agrega el siguiente contenido al archivo. Observe que se agrega el token generado anteriormente:
 
-![image](uploads/b635436980f453d2c788717a59a7ab33/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/8ecdf19b-2217-47ae-9adc-d8dcfd10b101)
 
 **Configurar Scanner**
 
 A Continuación se configura el archivo “package.json” para permitir ejecutar SonarQube a nivel del proyecto, para ello se agrega una nueva dependencia y un nuevo script:
 
-![image](uploads/82d614139e8d9728476c23667b515dfb/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/fa3b0424-5889-4987-afc0-815e3820bd37)
  
 Luego, se instalan las dependencias del proyecto con el comando npm install, específicamente se instalará “sonarqube-scanner” como una dependencia de desarrollo del proyecto.
 
-![image](uploads/ef1aa56f6b8f7139696df861f821cd32/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/42da46f5-3db8-47e2-9521-55b5eea6300f)
 
 Ahora, se procede a ejecutar el **escaner de SonarQube** a nivel de proyecto con el siguiente comando: `npm run sonar`
 
-![image](uploads/fc693e7c52fb60a1a2c280b3a5689f27/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/5be2dd2d-336e-4e12-8b39-068e43f52491)
 
-![image](uploads/1e4e8d4ab8e92fd02c71c5c2ea3eaac0/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/ab95cec3-5dcf-4e40-8573-e5214042a733)
 
 Después de realizado el análisis del proyecto del frontend, se puede ver el resultado en la interfaz web de sonarqube:
 
-![image](uploads/3cfa2eb0d40e552bc1fd19559b52d80a/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/71ae6970-8529-4e33-945c-a326c1bc0cc0)
 
 
 ## 3. Configuración de SonarQube en el proyecto Backend
@@ -147,14 +147,14 @@ Tal como se hizo en el paso anterior, se debe crear un archivo de nombre **“so
 
 Este archivo se utiliza para definir y personalizar la configuración del proyecto que posteriormente se analizará en SonarQube.  Para ello se agrega el siguiente contenido al archivo. Observe que se agrega el token generado anteriormente:
 
-![image](uploads/cc6de2f00c3e85e45a004aefca440417/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/76a5c790-024c-496e-884e-e506d2c07fe3)
 
 
 **Configurar Scanner**
 
 En el caso del backend, una opción es crear un archivo “.yml” para ejecutar el sonar scanner a partir de una imagen docker usando docker compose. Para ello se crea un archivo en la raíz del proyecto con el siguiente contenido:
 
-![image](uploads/521078cdec9fa87ab4031adcc9d09618/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/7cd68e13-77b9-4771-a917-6bf33e3c6dca)
 
 
 * Se indica **“network_mode: "host"”** para lograr desde el contenedor del escáner, la conexión con el servidor de sonarqube en el ambiente local “localhost:9000”.
@@ -165,14 +165,15 @@ Ahora, se procede a ejecutar el **escaner de SonarQube** a nivel de proyecto con
 
 `docker compose -f sonar-scanner.yml up sonar-scanner-uni2-backend`
 
-![image](uploads/4167d8d78e821bde67e1566d6b8acade/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/987b6828-5531-4f2d-8800-bf54fc1bc9b7)
 
-![image](uploads/eb64d1d2b91d0e9cad742b4c4f2fed45/image.png)
+
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/725f3ac7-31b0-4d4c-94d8-deed914fbae1)
 
 
 Después de realizado el análisis del proyecto del backend, se puede ver el resultado en la interfaz web de sonarqube:
 
-![image](uploads/535fa4a025a1ab546050166ce20fe222/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/e115b4fa-45c6-4059-bff0-34053a6068c8)
 
 
 ## Integración con SonarLint
@@ -190,14 +191,15 @@ Con el modo conectado, se aplica el mismo conjunto de reglas personalizadas tant
 
 1. Se accede a la opción de Sonar Lint, luego se debe abrir el Modo Conectado, y seleccionar Add sonarQube Connection:
 
-![image](uploads/ce0705670b6cca920b9e08e2437ad761/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/6b3d58aa-5a3c-4320-83fb-7b624e332c7b)
 
 
 2. A Continuación se debe ingresar los datos solicitados y por ultimo dar click en Save Connection:
 
-![image](uploads/b4f5f47630ba31cece45a2c2e8902553/image.png)
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/9bd77531-d3a4-4b17-b812-67b5794602c4)
 
-![image](uploads/08605ec129019ccb2027c121f51610ce/image.png)
+
+![image](https://github.com/CondeHdz94/SonarQube/assets/84251248/2b692555-9f08-4405-9789-321eaad1c853)
 
 
 3. Como paso siguiente, se debe enlazar el proyecto que se va a analizar. Para ello, dirigirse a la vista MODO CONECTADO DE SONARLINT en VSCode Explorer y seleccionar “Agregar enlace de proyecto” para agregar la conexión deseada.
