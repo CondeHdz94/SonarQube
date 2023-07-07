@@ -1,5 +1,5 @@
 # SonarQube
-SonarQube Information
+SonarQube - Información e Instalación 
 
 
 Es una herramienta de análisis de código estático autoadministrada que ayuda de forma sistemática a entregar un código limpio y de calidad. SonarQube se integra al flujo de trabajo existente, detectando  problemas en el código para que podamos entrar a corregirlos y lograr una mejora continua en nuestros proyectos. Con SonarQube se puede analizar más de 30 lenguajes de programación diferente y se puede integrar al flujo de CI para garantizar que el nuevo código que se va integrando al proyecto cumpla con los estándares establecidos. 
